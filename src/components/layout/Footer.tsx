@@ -8,7 +8,8 @@ const Footer = () => {
       position="relative"
       width="full"
       textAlign="center"
-      marginY={8}
+      marginTop={8}
+      marginBottom={['28', '28', '8']}
     >
       <Text>
         2021 &bull;{' '}

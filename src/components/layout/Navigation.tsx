@@ -18,7 +18,7 @@ const NavItem = ({ href, label, icon }: NavItemProps) => {
         aria-label={label}
         variant="ghost"
         flexBasis="25%"
-        fontSize={['2xl', 'md']}
+        fontSize={['2xl', '2xl']}
         padding={0}
         onClick={() => router.push(href)}
       >

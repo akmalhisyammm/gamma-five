@@ -8,7 +8,7 @@ const Meta = ({ title }: MetaProps) => {
   return (
     <Head>
       <title>{title && `${title} | `}Gamma-5</title>
-      {/* <link rel="icon" href="" /> */}
+      <link rel="icon" href="/assets/logo.png" />
     </Head>
   );
 };

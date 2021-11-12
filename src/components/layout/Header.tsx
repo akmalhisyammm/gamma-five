@@ -10,7 +10,6 @@ import {
 } from '@chakra-ui/react';
 import Link from 'next/link';
 
-import Navigation from './Navigation';
 import ThemeToggle from './ThemeToggle';
 
 const Header = () => {
@@ -37,11 +36,7 @@ const Header = () => {
           <Link href="/" passHref>
             <ChakraLink>
               <Flex alignItems="center">
-                <Image
-                  width={[12, 16]}
-                  src="https://via.placeholder.com/150"
-                  alt="logo"
-                />
+                <Image width={[12, 16]} src="/assets/logo.png" alt="logo" />
                 <Box marginLeft={4}>
                   <Heading
                     as="h1"
