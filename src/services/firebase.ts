@@ -5,6 +5,7 @@ import {
   getDocs,
   getDoc,
   doc,
+  addDoc,
 } from 'firebase/firestore';
 import { Characteristic, Personality, Rule } from 'models';
 
@@ -13,6 +14,7 @@ const db = getFirestore(firebaseApp);
 const personalitiesCollectionRef = collection(db, 'personalities');
 const characteristicsCollectionRef = collection(db, 'characteristics');
 const rulesCollectionRef = collection(db, 'rules');
+const messagesCollectionRef = collection(db, 'messages');
 
 export const getPersonalities = async () => {
   const personalities = await getDocs(personalitiesCollectionRef);
@@ -61,4 +63,24 @@ export const getRuleByPersonalityId = async (requestId: string) => {
   }
 
   return { ...(rule.data() as Rule), id: rule.id };
+};
+
+export const insertContactMessage = async (
+  firstName: string,
+  lastName: string,
+  email: string,
+  subject: string,
+  message: string
+) => {
+  try {
+    await addDoc(messagesCollectionRef, {
+      firstName,
+      lastName,
+      email,
+      subject,
+      message,
+    });
+  } catch (err) {
+    console.error(err);
+  }
 };

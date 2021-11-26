@@ -6,40 +6,140 @@ import {
   Grid,
   Input,
   Textarea,
+  useToast,
 } from '@chakra-ui/react';
+import { SubmitHandler, useForm } from 'react-hook-form';
+import { ContactMessage } from 'models';
 
-const ContactForm = () => {
+type ContactFormProps = {
+  sendMessage: (data: ContactMessage) => void;
+};
+
+const ContactForm = ({ sendMessage }: ContactFormProps) => {
+  const toast = useToast();
+
+  const {
+    handleSubmit,
+    register,
+    reset,
+    formState: { errors, isSubmitting },
+  } = useForm<any>();
+
+  const onSubmit: SubmitHandler<ContactMessage> = (data) => {
+    try {
+      sendMessage(data);
+      toast({
+        title: 'Sukses!',
+        description: 'Pesan Berhasil Dikirim.',
+        status: 'success',
+        duration: 5000,
+        isClosable: true,
+      });
+    } catch (err) {
+      toast({
+        title: 'Gagal!',
+        description: 'Pesan Gagal Dikirim.',
+        status: 'error',
+        duration: 5000,
+        isClosable: true,
+      });
+    }
+    reset();
+  };
+
   return (
     <Box marginY={12}>
-      <Grid gridTemplateColumns={['1fr', 'repeat(2, 1fr)']} gap={4}>
-        <FormControl id="firstname" isRequired>
-          <FormLabel>Nama Depan</FormLabel>
-          <Input borderColor="gray.500" type="text" />
+      <form onSubmit={handleSubmit(onSubmit)}>
+        <Grid gridTemplateColumns={['1fr', 'repeat(2, 1fr)']} gap={4}>
+          <FormControl
+            id="firstName"
+            htmlFor="firstName"
+            isInvalid={errors.name}
+            isRequired
+          >
+            <FormLabel>Nama Depan</FormLabel>
+            <Input
+              type="text"
+              borderColor="gray.500"
+              {...register('firstName', { required: true, maxLength: 16 })}
+            />
+          </FormControl>
+
+          <FormControl
+            id="lastName"
+            htmlFor="lastName"
+            isInvalid={errors.name}
+            isRequired
+          >
+            <FormLabel>Nama Belakang</FormLabel>
+            <Input
+              type="text"
+              borderColor="gray.500"
+              {...register('lastName', { required: true, maxLength: 16 })}
+            />
+          </FormControl>
+        </Grid>
+
+        <FormControl
+          id="email"
+          htmlFor="email"
+          marginTop={6}
+          isInvalid={errors.name}
+          isRequired
+        >
+          <FormLabel>Email</FormLabel>
+          <Input
+            type="email"
+            borderColor="gray.500"
+            {...register('email', {
+              required: true,
+              maxLength: 32,
+              pattern: /^\S+@\S+$/i,
+            })}
+          />
         </FormControl>
-        <FormControl id="lastname" isRequired>
-          <FormLabel>Nama Belakang</FormLabel>
-          <Input borderColor="gray.500" type="text" />
+
+        <FormControl
+          id="subject"
+          htmlFor="subject"
+          marginTop={6}
+          isInvalid={errors.name}
+          isRequired
+        >
+          <FormLabel>Subjek</FormLabel>
+          <Input
+            type="text"
+            borderColor="gray.500"
+            {...register('subject', { required: true, maxLength: 64 })}
+          />
         </FormControl>
-      </Grid>
 
-      <FormControl id="email" marginTop={6} isRequired>
-        <FormLabel>Email</FormLabel>
-        <Input borderColor="gray.500" type="email" />
-      </FormControl>
+        <FormControl
+          id="message"
+          htmlFor="message"
+          marginTop={6}
+          isInvalid={errors.name}
+          isRequired
+        >
+          <FormLabel>Pesan</FormLabel>
+          <Textarea
+            borderColor="gray.500"
+            placeholder="Masukkan pesan"
+            {...register('message', { required: true, maxLength: 256 })}
+          />
+        </FormControl>
 
-      <FormControl id="subject" marginTop={6} isRequired>
-        <FormLabel>Subjek</FormLabel>
-        <Input borderColor="gray.500" type="text" />
-      </FormControl>
-
-      <FormControl id="message" marginTop={6} isRequired>
-        <FormLabel>Pesan</FormLabel>
-        <Textarea borderColor="gray.500" placeholder="Masukkan pesan" />
-      </FormControl>
-
-      <Button colorScheme="teal" type="submit" marginY={6} isFullWidth>
-        Kirim
-      </Button>
+        <Button
+          colorScheme="teal"
+          type="submit"
+          marginY={6}
+          loadingText="Sedang Mengirim"
+          isLoading={isSubmitting}
+          isFullWidth
+        >
+          Kirim
+        </Button>
+      </form>
     </Box>
   );
 };

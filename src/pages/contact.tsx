@@ -1,10 +1,21 @@
 import { Heading } from '@chakra-ui/react';
 import { NextPage } from 'next';
-
+import { ContactMessage } from 'models';
+import { insertContactMessage } from 'services/firebase';
 import { ContactForm } from 'components/contactSections';
 import Layout from 'components/layout';
 
 const Contact: NextPage = () => {
+  const sendMessageHandler = async (data: ContactMessage) => {
+    await insertContactMessage(
+      data.firstName,
+      data.lastName,
+      data.email,
+      data.subject,
+      data.message
+    );
+  };
+
   return (
     <Layout title="Kontak">
       <Heading textAlign="center">Kontak Kami</Heading>
@@ -16,7 +27,7 @@ const Contact: NextPage = () => {
         }}
       />
 
-      <ContactForm />
+      <ContactForm sendMessage={sendMessageHandler} />
     </Layout>
   );
 };

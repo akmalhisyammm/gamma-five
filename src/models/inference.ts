@@ -26,3 +26,7 @@ export interface Input {
   personality_id: string;
   characteristics: Array<UserCertaintyFactor>;
 }
+
+export interface RadioInput {
+  radioValue: string;
+}
