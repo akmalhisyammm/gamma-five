@@ -18,7 +18,7 @@ const TestResult = ({ result }: TestResultProps) => {
   const backgroundColor = useColorModeValue('gray.50', 'gray.800');
 
   return (
-    <Box>
+    <>
       <Box
         marginTop={2}
         marginBottom={4}
@@ -77,7 +77,7 @@ const TestResult = ({ result }: TestResultProps) => {
         </Heading>
         <hr style={{ margin: '12px 0' }} />
         <List spacing={3}>
-          {result.personality.majors.map((major: string, idx: number) => (
+          {result.personality.majors.map((major, idx) => (
             <ListItem key={idx}>
               <ListIcon as={FaCheckCircle} color="blue.500" />
               {major}
@@ -85,7 +85,7 @@ const TestResult = ({ result }: TestResultProps) => {
           ))}
         </List>
       </Box>
-    </Box>
+    </>
   );
 };
 

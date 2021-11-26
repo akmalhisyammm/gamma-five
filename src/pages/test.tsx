@@ -14,19 +14,19 @@ import {
 import type { NextPage } from 'next';
 import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
-
-import { getCharacteristics, getRules } from 'services/firebase';
-import { TestForm, TestResult } from 'components/testSections';
-import Layout from 'components/layout';
-import Loading from 'components/Loading';
-import { infer } from 'utils/infer';
 import {
   Characteristic,
   Inferred,
   Input,
+  RadioInput,
   Rule,
   UserCertaintyFactor,
 } from 'models';
+import { getCharacteristics, getRules } from 'services/firebase';
+import { infer } from 'utils/infer';
+import { TestForm, TestResult } from 'components/testSections';
+import Layout from 'components/layout';
+import Loading from 'components/Loading';
 
 const Test: NextPage = () => {
   const [characteristics, setCharacteristics] = useState<Characteristic[]>([]);
@@ -57,7 +57,7 @@ const Test: NextPage = () => {
     setIsFetchData(false);
   }, [isFetchData]);
 
-  const inferData = async (data: object) => {
+  const inferDataHandler = async (data: RadioInput) => {
     const modifiedInput: UserCertaintyFactor[] = [];
 
     for (let [key, value] of Object.entries(data)) {
@@ -116,7 +116,10 @@ const Test: NextPage = () => {
       {isLoading ? (
         <Loading />
       ) : (
-        <TestForm characteristics={characteristics} inferData={inferData} />
+        <TestForm
+          characteristics={characteristics}
+          inferData={inferDataHandler}
+        />
       )}
 
       <Modal
@@ -129,6 +132,7 @@ const Test: NextPage = () => {
         isCentered
       >
         <ModalOverlay />
+
         <ModalContent marginX={4}>
           <ModalHeader
             backgroundColor={backgroundColor}
@@ -136,7 +140,7 @@ const Test: NextPage = () => {
           >
             Hasil Tes
           </ModalHeader>
-          <ModalCloseButton />
+
           <ModalBody>
             <TestResult result={result!} />
           </ModalBody>

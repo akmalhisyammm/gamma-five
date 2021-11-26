@@ -13,9 +13,9 @@ type LayoutProps = {
 };
 
 const variants = {
-  hidden: { opacity: 0, x: 0, y: 25, transition: { type: 'spring' } },
+  hidden: { opacity: 0, x: -35, y: 0, transition: { type: 'spring' } },
   enter: { opacity: 1, x: 0, y: 0, transition: { type: 'spring' } },
-  exit: { opacity: 0, x: 0, y: 25, transition: { type: 'spring' } },
+  exit: { opacity: 0, x: 35, y: 0, transition: { type: 'spring' } },
 };
 
 const Layout = ({ title, children }: LayoutProps) => {
@@ -31,6 +31,7 @@ const Layout = ({ title, children }: LayoutProps) => {
       <Box>
         <Meta title={title} />
         <Header />
+
         <MotionBox
           maxWidth={800}
           margin="0 auto"
@@ -46,8 +47,10 @@ const Layout = ({ title, children }: LayoutProps) => {
           <MotionBox as="main" width="full" marginY={22}>
             {children}
           </MotionBox>
+
           <Footer />
         </MotionBox>
+
         <TabBar />
       </Box>
     </Box>

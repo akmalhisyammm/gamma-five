@@ -1,8 +1,7 @@
 import { Box, Flex } from '@chakra-ui/react';
 import type { NextPage } from 'next';
-
-import Layout from 'components/layout';
 import { Hero, Welcome } from 'components/homeSections';
+import Layout from 'components/layout';
 
 const Home: NextPage = () => {
   return (

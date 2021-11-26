@@ -9,12 +9,12 @@ import {
   useColorModeValue,
 } from '@chakra-ui/react';
 import { Controller, SubmitHandler, useForm } from 'react-hook-form';
-import { Characteristic } from 'models';
+import { Characteristic, RadioInput } from 'models';
 import MotionBox from 'components/motion/MotionBox';
 
 type TestFormProps = {
   characteristics: Array<Characteristic>;
-  inferData: (data: object) => void;
+  inferData: (data: RadioInput) => void;
 };
 
 const variants = {
@@ -28,7 +28,9 @@ const TestForm = ({ characteristics, inferData }: TestFormProps) => {
     handleSubmit,
     formState: { errors, isSubmitting },
   } = useForm<any>();
-  const onSubmit: SubmitHandler<any> = (data) => inferData(data);
+
+  const onSubmit: SubmitHandler<RadioInput> = (data) => inferData(data);
+
   const backgroundColor = useColorModeValue('gray.50', 'gray.800');
 
   return (
