@@ -5,10 +5,8 @@ import {
   getDocs,
   getDoc,
   doc,
-  query,
-  where,
 } from 'firebase/firestore';
-import { Characteristic, Personality, Rule } from 'models/inference';
+import { Characteristic, Personality, Rule } from 'models';
 
 const db = getFirestore(firebaseApp);
 
