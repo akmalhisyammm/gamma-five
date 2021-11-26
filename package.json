@@ -1,7 +1,9 @@
 {
   "name": "gamma-five",
+  "description": "Majors Test Expert System Web App",
   "version": "0.1.0",
   "private": true,
+  "author": "Gamma-5 Group",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
