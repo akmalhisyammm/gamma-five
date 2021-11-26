@@ -1,7 +1,7 @@
 import { IconButton, Tooltip } from '@chakra-ui/react';
 import { useRouter } from 'next/router';
 import { IconType } from 'react-icons';
-import { FaPaperPlane, FaHome, FaBrain, FaUser } from 'react-icons/fa';
+import { FaPaperPlane, FaHome, FaAddressCard } from 'react-icons/fa';
 
 type NavItemProps = {
   href: string;
@@ -17,7 +17,7 @@ const NavItem = ({ href, label, icon }: NavItemProps) => {
       <IconButton
         aria-label={label}
         variant="ghost"
-        flexBasis="25%"
+        flexBasis="50%"
         fontSize={['2xl', '2xl']}
         padding={0}
         onClick={() => router.push(href)}
@@ -35,19 +35,14 @@ const navigations: NavItemProps[] = [
     icon: FaHome,
   },
   {
-    href: '/konsultasi',
-    label: 'Konsultasi',
-    icon: FaBrain,
-  },
-  {
-    href: '/kontak',
+    href: '/contact',
     label: 'Kontak',
     icon: FaPaperPlane,
   },
   {
-    href: '/tentang',
+    href: '/about',
     label: 'Tentang',
-    icon: FaUser,
+    icon: FaAddressCard,
   },
 ];
 

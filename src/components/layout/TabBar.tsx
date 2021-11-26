@@ -4,8 +4,8 @@ import Navigation from './Navigation';
 
 const TabBar = () => {
   const backgroundColor = useColorModeValue(
-    'rgba(229, 235, 242, 0.9)',
-    'rgba(45, 55, 72, 0.9)'
+    'rgba(229, 235, 242, 0.95)',
+    'rgba(45, 55, 72, 0.95)'
   );
 
   return (

@@ -59,22 +59,17 @@ const Header = () => {
 
         <Flex alignItems="center" gridGap={4}>
           <Flex display={['none', 'none', 'flex']}>
-            <Link href="/" passHref>
+            <Link href="/" passHref scroll={false}>
               <ChakraLink marginX={3}>
                 <Text>Beranda</Text>
               </ChakraLink>
             </Link>
-            <Link href="/konsultasi" passHref>
-              <ChakraLink marginX={3}>
-                <Text>Konsultasi</Text>
-              </ChakraLink>
-            </Link>
-            <Link href="/kontak" passHref>
+            <Link href="/contact" passHref scroll={false}>
               <ChakraLink marginX={3}>
                 <Text>Kontak</Text>
               </ChakraLink>
             </Link>
-            <Link href="/tentang" passHref>
+            <Link href="/about" passHref scroll={false}>
               <ChakraLink marginX={3}>
                 <Text>Tentang</Text>
               </ChakraLink>
