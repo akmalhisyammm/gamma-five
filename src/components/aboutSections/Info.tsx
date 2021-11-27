@@ -34,8 +34,8 @@ const Info = () => {
 
       <Box as="text">
         Web Sistem Pakar Gamma-5 merupakan web untuk menentukan jurusan kuliah
-        berdasarkan kepribadian calon mahasiswa dengan menggunakan Metode{' '}
-        <Text as="i">Forward Chaining</Text>.
+        berdasarkan kepribadian calon mahasiswa dengan menggunakan metode{' '}
+        <Text as="i">Certainty Factor</Text>.
       </Box>
     </MotionBox>
   );

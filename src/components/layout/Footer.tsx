@@ -13,7 +13,7 @@ const Footer = () => {
     >
       <Text>
         2021 &bull;{' '}
-        <Link href="/tentang" passHref>
+        <Link href="/about" passHref>
           <ChakraLink>Gamma-5</ChakraLink>
         </Link>
       </Text>

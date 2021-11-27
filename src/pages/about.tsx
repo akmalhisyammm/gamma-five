@@ -9,7 +9,7 @@ const About = () => {
         <Heading>Tentang Kami</Heading>
         <hr
           style={{
-            border: '1px solid',
+            borderBottom: '2px solid',
             width: 100,
             margin: '12px auto 0',
           }}

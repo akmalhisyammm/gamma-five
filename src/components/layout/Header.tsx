@@ -33,7 +33,7 @@ const Header = () => {
         padding={4}
       >
         <Box>
-          <Link href="/" passHref>
+          <Link href="/" passHref scroll={false}>
             <ChakraLink>
               <Flex alignItems="center">
                 <Image width={[12, 16]} src="/assets/logo.png" alt="logo" />

@@ -31,9 +31,13 @@ const Team = () => {
       <Grid
         templateColumns={['repeat(1, 1fr)', 'repeat(1, 1fr)', 'repeat(3, 1fr)']}
         gap={4}
-        marginTop={6}
+        marginTop={8}
       >
-        <Flex flexDirection="column" alignItems="center">
+        <Flex
+          flexDirection="column"
+          alignItems="center"
+          marginBottom={[4, 4, 0]}
+        >
           <Image
             border="4px solid"
             borderRadius="full"
@@ -46,7 +50,11 @@ const Team = () => {
           <Text>00000038816</Text>
         </Flex>
 
-        <Flex flexDirection="column" alignItems="center">
+        <Flex
+          flexDirection="column"
+          alignItems="center"
+          marginBottom={[4, 4, 0]}
+        >
           <Image
             border="4px solid"
             borderRadius="full"
@@ -59,7 +67,11 @@ const Team = () => {
           <Text>00000040027</Text>
         </Flex>
 
-        <Flex flexDirection="column" alignItems="center">
+        <Flex
+          flexDirection="column"
+          alignItems="center"
+          marginBottom={[4, 4, 0]}
+        >
           <Image
             border="4px solid"
             borderRadius="full"

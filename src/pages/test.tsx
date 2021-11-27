@@ -102,7 +102,7 @@ const Test = ({ personalities, characteristics, rules }: Props) => {
       <Heading textAlign="center">Tes Penjurusan</Heading>
       <hr
         style={{
-          border: '1px solid',
+          borderBottom: '2px solid',
           width: 100,
           margin: '12px auto 0',
         }}
