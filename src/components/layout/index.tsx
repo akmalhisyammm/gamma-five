@@ -13,9 +13,14 @@ type LayoutProps = {
 };
 
 const variants = {
-  hidden: { opacity: 0, x: -35, y: 0, transition: { type: 'spring' } },
+  hidden: { opacity: 0, x: 0, y: 25, transition: { type: 'spring' } },
   enter: { opacity: 1, x: 0, y: 0, transition: { type: 'spring' } },
-  exit: { opacity: 0, x: 35, y: 0, transition: { type: 'spring' } },
+  exit: {
+    opacity: 0,
+    x: 0,
+    y: 25,
+    transition: { type: 'spring', delay: 1 },
+  },
 };
 
 const Layout = ({ title, children }: LayoutProps) => {

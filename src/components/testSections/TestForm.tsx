@@ -19,7 +19,12 @@ type TestFormProps = {
 
 const variants = {
   hidden: { opacity: 0, x: 0, y: 25, transition: { type: 'spring' } },
-  enter: { opacity: 1, x: 0, y: 0, transition: { type: 'spring' } },
+  enter: {
+    opacity: 1,
+    x: 0,
+    y: 0,
+    transition: { type: 'spring', delay: 0.5 },
+  },
 };
 
 const TestForm = ({ characteristics, inferData }: TestFormProps) => {
@@ -56,7 +61,11 @@ const TestForm = ({ characteristics, inferData }: TestFormProps) => {
               isRequired
               isInvalid={errors.name}
             >
-              <FormLabel as="legend" textAlign={['left', 'left', 'center']}>
+              <FormLabel
+                as="legend"
+                fontSize="xl"
+                textAlign={['left', 'left', 'center']}
+              >
                 {characteristic.statement}
               </FormLabel>
               <Controller
@@ -69,10 +78,18 @@ const TestForm = ({ characteristics, inferData }: TestFormProps) => {
                       spacing="24px"
                       justify="center"
                     >
-                      <Radio value="-0.6">Tidak Cocok</Radio>
-                      <Radio value="-0.2">Kurang Cocok</Radio>
-                      <Radio value="0.6">Cocok</Radio>
-                      <Radio value="1">Sangat Cocok</Radio>
+                      <Radio colorScheme="red" value="-0.6">
+                        Tidak Cocok
+                      </Radio>
+                      <Radio colorScheme="yellow" value="-0.2">
+                        Kurang Cocok
+                      </Radio>
+                      <Radio colorScheme="teal" value="0.6">
+                        Cocok
+                      </Radio>
+                      <Radio colorScheme="green" value="1">
+                        Sangat Cocok
+                      </Radio>
                     </Stack>
                   </RadioGroup>
                 )}

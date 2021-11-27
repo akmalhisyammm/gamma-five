@@ -1,8 +1,31 @@
-import { Box, Flex, Grid, Heading, Image, Text } from '@chakra-ui/react';
+import { Flex, Grid, Heading, Image, Text } from '@chakra-ui/react';
+import MotionBox from 'components/motion/MotionBox';
+
+const variants = {
+  hidden: { opacity: 0, x: 35, y: 0, transition: { type: 'spring' } },
+  enter: {
+    opacity: 1,
+    x: 0,
+    y: 0,
+    transition: { type: 'spring', delay: 1 },
+  },
+  exit: {
+    opacity: 0,
+    x: -35,
+    y: 0,
+    transition: { type: 'spring', delay: 0.5 },
+  },
+};
 
 const Team = () => {
   return (
-    <Box marginY={20}>
+    <MotionBox
+      marginY={20}
+      variants={variants}
+      initial="hidden"
+      animate="enter"
+      exit="exit"
+    >
       <Heading size="md">Tim Pengembang</Heading>
 
       <Grid
@@ -49,7 +72,7 @@ const Team = () => {
           <Text>00000039905</Text>
         </Flex>
       </Grid>
-    </Box>
+    </MotionBox>
   );
 };
 

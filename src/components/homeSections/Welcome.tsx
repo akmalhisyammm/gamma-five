@@ -1,12 +1,35 @@
-import { Box, Button, Heading, Text } from '@chakra-ui/react';
+import { Button, Heading, Text } from '@chakra-ui/react';
 import { useRouter } from 'next/router';
 import { FaArrowRight } from 'react-icons/fa';
+import MotionBox from 'components/motion/MotionBox';
+
+const variants = {
+  hidden: { opacity: 0, x: -25, y: 0, transition: { type: 'spring' } },
+  enter: {
+    opacity: 1,
+    x: 0,
+    y: 0,
+    transition: { type: 'spring', delay: 0.5 },
+  },
+  exit: {
+    opacity: 0,
+    x: -25,
+    y: 0,
+    transition: { type: 'spring' },
+  },
+};
 
 const Welcome = () => {
   const router = useRouter();
 
   return (
-    <Box flexBasis={['100%', '100%', '50%']}>
+    <MotionBox
+      flexBasis={['100%', '100%', '50%']}
+      variants={variants}
+      initial="hidden"
+      animate="enter"
+      exit="exit"
+    >
       <Heading
         as="h1"
         bgGradient="linear(to-br, cyan.500, blue.900)"
@@ -35,7 +58,7 @@ const Welcome = () => {
       >
         Tes Sekarang
       </Button>
-    </Box>
+    </MotionBox>
   );
 };
 

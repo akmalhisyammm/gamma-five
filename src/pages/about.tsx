@@ -1,9 +1,8 @@
 import { Box, Heading } from '@chakra-ui/react';
-import type { NextPage } from 'next';
 import { Info, Team } from 'components/aboutSections';
 import Layout from 'components/layout';
 
-const About: NextPage = () => {
+const About = () => {
   return (
     <Layout title="Tentang">
       <Box textAlign="center">

@@ -10,9 +10,26 @@ import {
 } from '@chakra-ui/react';
 import { SubmitHandler, useForm } from 'react-hook-form';
 import { ContactMessage } from 'models';
+import MotionBox from 'components/motion/MotionBox';
 
 type ContactFormProps = {
   sendMessage: (data: ContactMessage) => void;
+};
+
+const variants = {
+  hidden: { opacity: 0, x: -35, y: 0, transition: { type: 'spring' } },
+  enter: {
+    opacity: 1,
+    x: 0,
+    y: 0,
+    transition: { type: 'spring', delay: 0.5 },
+  },
+  exit: {
+    opacity: 0,
+    x: 35,
+    y: 0,
+    transition: { type: 'spring', delay: 0.5 },
+  },
 };
 
 const ContactForm = ({ sendMessage }: ContactFormProps) => {
@@ -48,7 +65,13 @@ const ContactForm = ({ sendMessage }: ContactFormProps) => {
   };
 
   return (
-    <Box marginY={12}>
+    <MotionBox
+      marginY={12}
+      variants={variants}
+      initial="hidden"
+      animate="enter"
+      exit="exit"
+    >
       <form onSubmit={handleSubmit(onSubmit)}>
         <Grid gridTemplateColumns={['1fr', 'repeat(2, 1fr)']} gap={4}>
           <FormControl
@@ -140,7 +163,7 @@ const ContactForm = ({ sendMessage }: ContactFormProps) => {
           Kirim
         </Button>
       </form>
-    </Box>
+    </MotionBox>
   );
 };
 
