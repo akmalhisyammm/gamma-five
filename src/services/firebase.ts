@@ -74,6 +74,6 @@ export const insertContactMessage = async (
       message
     });
   } catch (err) {
-    console.error(err);
+    // console.error(err);
   }
 };

@@ -180,7 +180,7 @@ export const getStaticProps: GetStaticProps = async () => {
       })
     );
   } catch (err) {
-    console.error(err);
+    // console.error(err);
   }
 
   return {
