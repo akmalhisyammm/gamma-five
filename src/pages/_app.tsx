@@ -16,10 +16,7 @@ function MyApp({ Component, pageProps, router }: AppProps) {
         />
       </Head>
 
-      <AnimatePresence
-        exitBeforeEnter
-        onExitComplete={() => window.scrollTo(0, 0)}
-      >
+      <AnimatePresence exitBeforeEnter onExitComplete={() => window.scrollTo(0, 0)}>
         <Component {...pageProps} key={router.route} />
       </AnimatePresence>
     </ChakraProvider>

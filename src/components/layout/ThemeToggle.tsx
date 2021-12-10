@@ -12,7 +12,7 @@ const ThemeToggle = () => {
       icon={colorMode === 'light' ? <RiMoonFill /> : <RiSunLine />}
       onClick={toggleColorMode}
       _hover={{
-        backgroundColor: colorMode === 'light' ? 'gray.200' : 'gray.700',
+        backgroundColor: colorMode === 'light' ? 'gray.200' : 'gray.700'
       }}
     />
   );

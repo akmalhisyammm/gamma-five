@@ -6,7 +6,7 @@ import {
   Radio,
   RadioGroup,
   Stack,
-  useColorModeValue,
+  useColorModeValue
 } from '@chakra-ui/react';
 import { Controller, SubmitHandler, useForm } from 'react-hook-form';
 import { Characteristic, RadioInput } from 'models';
@@ -23,15 +23,15 @@ const variants = {
     opacity: 1,
     x: 0,
     y: 0,
-    transition: { type: 'spring', delay: 0.5 },
-  },
+    transition: { type: 'spring', delay: 0.5 }
+  }
 };
 
 const TestForm = ({ characteristics, inferData }: TestFormProps) => {
   const {
     control,
     handleSubmit,
-    formState: { errors, isSubmitting },
+    formState: { errors, isSubmitting }
   } = useForm<any>();
 
   const onSubmit: SubmitHandler<RadioInput> = (data) => inferData(data);
@@ -50,8 +50,7 @@ const TestForm = ({ characteristics, inferData }: TestFormProps) => {
             backgroundColor={backgroundColor}
             variants={variants}
             initial="hidden"
-            animate="enter"
-          >
+            animate="enter">
             <FormControl
               as="fieldset"
               marginTop={6}
@@ -59,13 +58,8 @@ const TestForm = ({ characteristics, inferData }: TestFormProps) => {
               paddingTop={4}
               paddingBottom={8}
               isRequired
-              isInvalid={errors.name}
-            >
-              <FormLabel
-                as="legend"
-                fontSize="xl"
-                textAlign={['left', 'left', 'center']}
-              >
+              isInvalid={errors.name}>
+              <FormLabel as="legend" fontSize="xl" textAlign={['left', 'left', 'center']}>
                 {characteristic.statement}
               </FormLabel>
               <Controller
@@ -73,11 +67,7 @@ const TestForm = ({ characteristics, inferData }: TestFormProps) => {
                 control={control}
                 render={({ field: { onChange, value } }) => (
                   <RadioGroup value={value} onChange={onChange}>
-                    <Stack
-                      direction={['column', 'column', 'row']}
-                      spacing="24px"
-                      justify="center"
-                    >
+                    <Stack direction={['column', 'column', 'row']} spacing="24px" justify="center">
                       <Radio colorScheme="red" value="-0.6">
                         Tidak Cocok
                       </Radio>
@@ -105,8 +95,7 @@ const TestForm = ({ characteristics, inferData }: TestFormProps) => {
           loadingText="Sedang Memeriksa"
           spinnerPlacement="start"
           isLoading={isSubmitting}
-          isFullWidth
-        >
+          isFullWidth>
           Periksa
         </Button>
       </form>

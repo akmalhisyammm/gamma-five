@@ -7,25 +7,20 @@ const variants = {
     opacity: 1,
     x: 0,
     y: 0,
-    transition: { type: 'spring', delay: 0.5 },
+    transition: { type: 'spring', delay: 0.5 }
   },
   exit: {
     opacity: 0,
     x: 25,
     y: 0,
-    transition: { type: 'spring' },
-  },
+    transition: { type: 'spring' }
+  }
 };
 
 const Info = () => {
   return (
     <MotionBox variants={variants} initial="hidden" animate="enter" exit="exit">
-      <Flex
-        flexDirection="column"
-        alignItems="center"
-        marginTop={4}
-        marginBottom={8}
-      >
+      <Flex flexDirection="column" alignItems="center" marginTop={4} marginBottom={8}>
         <Image src="/assets/icons/teamwork.png" alt="teamwork" />
         <ChakraLink href="http://www.freepik.com" fontSize="small" isExternal>
           Designed by katemangostar / Freepik
@@ -33,9 +28,8 @@ const Info = () => {
       </Flex>
 
       <Box as="text">
-        Web Sistem Pakar Gamma-5 merupakan web untuk menentukan jurusan kuliah
-        berdasarkan kepribadian calon mahasiswa dengan menggunakan metode{' '}
-        <Text as="i">Certainty Factor</Text>.
+        Web Sistem Pakar Gamma-5 merupakan web untuk menentukan jurusan kuliah berdasarkan
+        kepribadian calon mahasiswa dengan menggunakan metode <Text as="i">Certainty Factor</Text>.
       </Box>
     </MotionBox>
   );

@@ -19,8 +19,8 @@ const variants = {
     opacity: 0,
     x: 0,
     y: 25,
-    transition: { type: 'spring', delay: 1 },
-  },
+    transition: { type: 'spring', delay: 1 }
+  }
 };
 
 const Layout = ({ title, children }: LayoutProps) => {
@@ -31,8 +31,7 @@ const Layout = ({ title, children }: LayoutProps) => {
       backgroundColor={colorMode === 'light' ? 'gray.100' : 'gray.900'}
       minHeight="100vh"
       paddingBottom={100}
-      transition="0.5s ease-out"
-    >
+      transition="0.5s ease-out">
       <Box>
         <Meta title={title} />
         <Header />
@@ -47,8 +46,7 @@ const Layout = ({ title, children }: LayoutProps) => {
           variants={variants}
           initial="hidden"
           animate="enter"
-          exit="exit"
-        >
+          exit="exit">
           <MotionBox as="main" width="full" marginY={22}>
             {children}
           </MotionBox>

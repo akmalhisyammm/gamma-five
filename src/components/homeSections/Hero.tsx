@@ -1,4 +1,4 @@
-import { Box, Image, Link as ChakraLink } from '@chakra-ui/react';
+import { Image, Link as ChakraLink } from '@chakra-ui/react';
 import MotionBox from 'components/motion/MotionBox';
 
 const variants = {
@@ -7,14 +7,14 @@ const variants = {
     opacity: 1,
     x: 0,
     y: 0,
-    transition: { type: 'spring', delay: 1 },
+    transition: { type: 'spring', delay: 1 }
   },
   exit: {
     opacity: 0,
     x: 25,
     y: 0,
-    transition: { type: 'spring', delay: 0.5 },
-  },
+    transition: { type: 'spring', delay: 0.5 }
+  }
 };
 
 const Hero = () => {
@@ -27,8 +27,7 @@ const Hero = () => {
       variants={variants}
       initial="hidden"
       animate="enter"
-      exit="exit"
-    >
+      exit="exit">
       <Image marginX="auto" src="/assets/icons/robot.png" alt="robot" />
       <ChakraLink href="https://www.freepik.com" fontSize="small" isExternal>
         Designed by by macrovector / Freepik

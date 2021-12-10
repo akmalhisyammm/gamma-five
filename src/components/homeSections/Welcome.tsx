@@ -9,14 +9,14 @@ const variants = {
     opacity: 1,
     x: 0,
     y: 0,
-    transition: { type: 'spring', delay: 0.5 },
+    transition: { type: 'spring', delay: 0.5 }
   },
   exit: {
     opacity: 0,
     x: -25,
     y: 0,
-    transition: { type: 'spring' },
-  },
+    transition: { type: 'spring' }
+  }
 };
 
 const Welcome = () => {
@@ -28,15 +28,13 @@ const Welcome = () => {
       variants={variants}
       initial="hidden"
       animate="enter"
-      exit="exit"
-    >
+      exit="exit">
       <Heading
         as="h1"
         bgGradient="linear(to-br, cyan.500, blue.900)"
         bgClip="text"
         fontSize={['4xl', '5xl', '6xl']}
-        marginBottom={4}
-      >
+        marginBottom={4}>
         Selamat Datang di Web Sistem Pakar Gamma-5
       </Heading>
 
@@ -50,12 +48,11 @@ const Welcome = () => {
         rightIcon={<FaArrowRight />}
         onClick={() => router.push('/test')}
         _hover={{
-          bgGradient: 'linear(to-br, cyan.600, blue.900)',
+          bgGradient: 'linear(to-br, cyan.600, blue.900)'
         }}
         _active={{
-          bgGradient: 'linear(to-br, cyan.600, blue.900)',
-        }}
-      >
+          bgGradient: 'linear(to-br, cyan.600, blue.900)'
+        }}>
         Tes Sekarang
       </Button>
     </MotionBox>

@@ -8,7 +8,7 @@ import {
   ModalFooter,
   ModalBody,
   useColorModeValue,
-  useDisclosure,
+  useDisclosure
 } from '@chakra-ui/react';
 import type { GetStaticProps } from 'next';
 import { useRouter } from 'next/router';
@@ -20,7 +20,7 @@ import {
   Personality,
   RadioInput,
   Rule,
-  UserCertaintyFactor,
+  UserCertaintyFactor
 } from 'models';
 import { infer } from 'utils/infer';
 import { firebaseApp } from 'config/firebase-config';
@@ -45,10 +45,10 @@ const Test = ({ personalities, characteristics, rules }: Props) => {
   const inferDataHandler = async (data: RadioInput) => {
     const modifiedInput: UserCertaintyFactor[] = [];
 
-    for (let [key, value] of Object.entries(data)) {
+    for (const [key, value] of Object.entries(data)) {
       modifiedInput.push({
         characteristic_id: key,
-        weight: parseFloat(value),
+        weight: parseFloat(value)
       });
     }
 
@@ -63,7 +63,7 @@ const Test = ({ personalities, characteristics, rules }: Props) => {
       }
       processedInput.push({
         personality_id: rule.personality_id,
-        characteristics: tempCharacteristics,
+        characteristics: tempCharacteristics
       });
       tempCharacteristics = [];
     }
@@ -74,9 +74,7 @@ const Test = ({ personalities, characteristics, rules }: Props) => {
       const currentPersonality = personalities.find(
         (personality) => personality.id === input.personality_id
       );
-      const currentRule = rules.find(
-        (rule) => rule.personality_id === input.personality_id
-      );
+      const currentRule = rules.find((rule) => rule.personality_id === input.personality_id);
 
       if (!currentPersonality || !currentRule) return;
 
@@ -84,14 +82,9 @@ const Test = ({ personalities, characteristics, rules }: Props) => {
       inferResult.push(result);
     }
 
-    const highestInferProb = Math.max.apply(
-      Math,
-      inferResult.map((res) => res.probability)
-    );
+    const highestInferProb = Math.max(...inferResult.map((res) => res.probability));
 
-    const finalResult = inferResult.find(
-      (res) => res.probability == highestInferProb
-    );
+    const finalResult = inferResult.find((res) => res.probability == highestInferProb);
 
     setResult(finalResult);
     onOpen();
@@ -104,56 +97,49 @@ const Test = ({ personalities, characteristics, rules }: Props) => {
         style={{
           borderBottom: '2px solid',
           width: 100,
-          margin: '12px auto 0',
+          margin: '12px auto 0'
         }}
       />
 
-      <TestForm
-        characteristics={characteristics}
-        inferData={inferDataHandler}
-      />
+      <TestForm characteristics={characteristics} inferData={inferDataHandler} />
 
-      <Modal
-        isOpen={isOpen}
-        onClose={onClose}
-        motionPreset="slideInBottom"
-        scrollBehavior="inside"
-        size="2xl"
-        closeOnOverlayClick={false}
-        isCentered
-      >
-        <ModalOverlay />
-        <ModalContent marginX={4}>
-          <ModalHeader
-            backgroundColor={backgroundColor}
-            borderBottom="1px solid"
-          >
-            Hasil Tes
-          </ModalHeader>
+      {result && (
+        <Modal
+          isOpen={isOpen}
+          onClose={onClose}
+          motionPreset="slideInBottom"
+          scrollBehavior="inside"
+          size="2xl"
+          closeOnOverlayClick={false}
+          isCentered>
+          <ModalOverlay />
+          <ModalContent marginX={4}>
+            <ModalHeader backgroundColor={backgroundColor} borderBottom="1px solid">
+              Hasil Tes
+            </ModalHeader>
 
-          <ModalBody>
-            <TestResult result={result!} />
-          </ModalBody>
+            <ModalBody>
+              <TestResult result={result} />
+            </ModalBody>
 
-          <ModalFooter
-            justifyContent="flex-start"
-            backgroundColor={backgroundColor}
-            borderTop="1px solid"
-          >
-            <Button
-              colorScheme="blue"
-              mr={3}
-              leftIcon={<FaArrowLeft />}
-              onClick={() => {
-                onClose();
-                router.push('/');
-              }}
-            >
-              Kembali ke Beranda
-            </Button>
-          </ModalFooter>
-        </ModalContent>
-      </Modal>
+            <ModalFooter
+              justifyContent="flex-start"
+              backgroundColor={backgroundColor}
+              borderTop="1px solid">
+              <Button
+                colorScheme="blue"
+                mr={3}
+                leftIcon={<FaArrowLeft />}
+                onClick={() => {
+                  onClose();
+                  router.push('/');
+                }}>
+                Kembali ke Beranda
+              </Button>
+            </ModalFooter>
+          </ModalContent>
+        </Modal>
+      )}
     </Layout>
   );
 };
@@ -174,7 +160,7 @@ export const getStaticProps: GetStaticProps = async () => {
     personalities.docs.map((doc) =>
       personalitiesData.push({
         ...(doc.data() as Personality),
-        id: doc.id,
+        id: doc.id
       })
     );
 
@@ -182,7 +168,7 @@ export const getStaticProps: GetStaticProps = async () => {
     characteristics.docs.map((doc) =>
       characteristicsData.push({
         ...(doc.data() as Characteristic),
-        id: doc.id,
+        id: doc.id
       })
     );
 
@@ -190,7 +176,7 @@ export const getStaticProps: GetStaticProps = async () => {
     rules.docs.map((doc) =>
       rulesData.push({
         ...(doc.data() as Rule),
-        id: doc.id,
+        id: doc.id
       })
     );
   } catch (err) {
@@ -201,8 +187,8 @@ export const getStaticProps: GetStaticProps = async () => {
     props: {
       personalities: personalitiesData,
       characteristics: characteristicsData,
-      rules: rulesData,
-    },
+      rules: rulesData
+    }
   };
 };
 

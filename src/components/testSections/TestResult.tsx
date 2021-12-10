@@ -1,12 +1,4 @@
-import {
-  Box,
-  Heading,
-  List,
-  ListIcon,
-  ListItem,
-  Text,
-  useColorModeValue,
-} from '@chakra-ui/react';
+import { Box, Heading, List, ListIcon, ListItem, Text, useColorModeValue } from '@chakra-ui/react';
 import { Inferred } from 'models';
 import { FaCheckCircle } from 'react-icons/fa';
 
@@ -25,8 +17,7 @@ const TestResult = ({ result }: TestResultProps) => {
         padding={4}
         border="1px solid"
         borderRadius={8}
-        backgroundColor={backgroundColor}
-      >
+        backgroundColor={backgroundColor}>
         <Heading fontSize="2xl" marginBottom={2}>
           Tipe Kepribadian
         </Heading>
@@ -40,8 +31,7 @@ const TestResult = ({ result }: TestResultProps) => {
         padding={4}
         border="1px solid"
         borderRadius={8}
-        backgroundColor={backgroundColor}
-      >
+        backgroundColor={backgroundColor}>
         <Heading fontSize="2xl" marginBottom={2}>
           Probabilitas
         </Heading>
@@ -55,8 +45,7 @@ const TestResult = ({ result }: TestResultProps) => {
         padding={4}
         border="1px solid"
         borderRadius={8}
-        backgroundColor={backgroundColor}
-      >
+        backgroundColor={backgroundColor}>
         <Heading fontSize="2xl" marginBottom={2}>
           Deskripsi
         </Heading>
@@ -70,8 +59,7 @@ const TestResult = ({ result }: TestResultProps) => {
         padding={4}
         border="1px solid"
         borderRadius={8}
-        backgroundColor={backgroundColor}
-      >
+        backgroundColor={backgroundColor}>
         <Heading fontSize="2xl" marginBottom={2}>
           Rekomendasi Jurusan
         </Heading>

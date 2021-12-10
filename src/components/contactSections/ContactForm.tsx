@@ -1,13 +1,4 @@
-import {
-  Box,
-  Button,
-  FormControl,
-  FormLabel,
-  Grid,
-  Input,
-  Textarea,
-  useToast,
-} from '@chakra-ui/react';
+import { Button, FormControl, FormLabel, Grid, Input, Textarea, useToast } from '@chakra-ui/react';
 import { SubmitHandler, useForm } from 'react-hook-form';
 import { ContactMessage } from 'models';
 import MotionBox from 'components/motion/MotionBox';
@@ -22,14 +13,14 @@ const variants = {
     opacity: 1,
     x: 0,
     y: 0,
-    transition: { type: 'spring', delay: 0.5 },
+    transition: { type: 'spring', delay: 0.5 }
   },
   exit: {
     opacity: 0,
     x: 35,
     y: 0,
-    transition: { type: 'spring', delay: 0.5 },
-  },
+    transition: { type: 'spring', delay: 0.5 }
+  }
 };
 
 const ContactForm = ({ sendMessage }: ContactFormProps) => {
@@ -39,7 +30,7 @@ const ContactForm = ({ sendMessage }: ContactFormProps) => {
     handleSubmit,
     register,
     reset,
-    formState: { errors, isSubmitting },
+    formState: { errors, isSubmitting }
   } = useForm<any>();
 
   const onSubmit: SubmitHandler<ContactMessage> = (data) => {
@@ -50,7 +41,7 @@ const ContactForm = ({ sendMessage }: ContactFormProps) => {
         description: 'Pesan Berhasil Dikirim.',
         status: 'success',
         duration: 5000,
-        isClosable: true,
+        isClosable: true
       });
     } catch (err) {
       toast({
@@ -58,28 +49,17 @@ const ContactForm = ({ sendMessage }: ContactFormProps) => {
         description: 'Pesan Gagal Dikirim.',
         status: 'error',
         duration: 5000,
-        isClosable: true,
+        isClosable: true
       });
     }
     reset();
   };
 
   return (
-    <MotionBox
-      marginY={12}
-      variants={variants}
-      initial="hidden"
-      animate="enter"
-      exit="exit"
-    >
+    <MotionBox marginY={12} variants={variants} initial="hidden" animate="enter" exit="exit">
       <form onSubmit={handleSubmit(onSubmit)}>
         <Grid gridTemplateColumns={['1fr', 'repeat(2, 1fr)']} gap={4}>
-          <FormControl
-            id="firstName"
-            htmlFor="firstName"
-            isInvalid={errors.name}
-            isRequired
-          >
+          <FormControl id="firstName" htmlFor="firstName" isInvalid={errors.name} isRequired>
             <FormLabel>Nama Depan</FormLabel>
             <Input
               type="text"
@@ -88,12 +68,7 @@ const ContactForm = ({ sendMessage }: ContactFormProps) => {
             />
           </FormControl>
 
-          <FormControl
-            id="lastName"
-            htmlFor="lastName"
-            isInvalid={errors.name}
-            isRequired
-          >
+          <FormControl id="lastName" htmlFor="lastName" isInvalid={errors.name} isRequired>
             <FormLabel>Nama Belakang</FormLabel>
             <Input
               type="text"
@@ -103,13 +78,7 @@ const ContactForm = ({ sendMessage }: ContactFormProps) => {
           </FormControl>
         </Grid>
 
-        <FormControl
-          id="email"
-          htmlFor="email"
-          marginTop={6}
-          isInvalid={errors.name}
-          isRequired
-        >
+        <FormControl id="email" htmlFor="email" marginTop={6} isInvalid={errors.name} isRequired>
           <FormLabel>Email</FormLabel>
           <Input
             type="email"
@@ -117,7 +86,7 @@ const ContactForm = ({ sendMessage }: ContactFormProps) => {
             {...register('email', {
               required: true,
               maxLength: 32,
-              pattern: /^\S+@\S+$/i,
+              pattern: /^\S+@\S+$/i
             })}
           />
         </FormControl>
@@ -127,8 +96,7 @@ const ContactForm = ({ sendMessage }: ContactFormProps) => {
           htmlFor="subject"
           marginTop={6}
           isInvalid={errors.name}
-          isRequired
-        >
+          isRequired>
           <FormLabel>Subjek</FormLabel>
           <Input
             type="text"
@@ -142,8 +110,7 @@ const ContactForm = ({ sendMessage }: ContactFormProps) => {
           htmlFor="message"
           marginTop={6}
           isInvalid={errors.name}
-          isRequired
-        >
+          isRequired>
           <FormLabel>Pesan</FormLabel>
           <Textarea
             borderColor="gray.500"
@@ -158,8 +125,7 @@ const ContactForm = ({ sendMessage }: ContactFormProps) => {
           marginY={6}
           loadingText="Sedang Mengirim"
           isLoading={isSubmitting}
-          isFullWidth
-        >
+          isFullWidth>
           Kirim
         </Button>
       </form>

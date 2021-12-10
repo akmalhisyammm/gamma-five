@@ -9,8 +9,7 @@ const Footer = () => {
       width="full"
       textAlign="center"
       marginTop={8}
-      marginBottom={['28', '28', '8']}
-    >
+      marginBottom={['28', '28', '8']}>
       <Text>
         2021 &bull;{' '}
         <Link href="/about" passHref>

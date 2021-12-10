@@ -6,7 +6,7 @@ import {
   Link as ChakraLink,
   Spacer,
   Text,
-  useColorMode,
+  useColorMode
 } from '@chakra-ui/react';
 import Link from 'next/link';
 
@@ -23,27 +23,15 @@ const Header = () => {
       backgroundColor={colorMode === 'light' ? 'white' : 'gray.700'}
       boxShadow="0px 4px 14px 1px rgba(0, 0, 0, 0.15);"
       position="fixed"
-      zIndex={5}
-    >
-      <Flex
-        align="center"
-        height="full"
-        maxWidth={800}
-        margin="0 auto"
-        padding={4}
-      >
+      zIndex={5}>
+      <Flex align="center" height="full" maxWidth={800} margin="0 auto" padding={4}>
         <Box>
           <Link href="/" passHref scroll={false}>
             <ChakraLink>
               <Flex alignItems="center">
                 <Image width={[12, 16]} src="/assets/logo.png" alt="logo" />
                 <Box marginLeft={4}>
-                  <Heading
-                    as="h1"
-                    fontSize={['1rem', '1.5rem']}
-                    fontWeight="600"
-                    mb={1}
-                  >
+                  <Heading as="h1" fontSize={['1rem', '1.5rem']} fontWeight="600" mb={1}>
                     Gamma-5
                   </Heading>
                   <Text fontSize="0.75rem" fontWeight="400">

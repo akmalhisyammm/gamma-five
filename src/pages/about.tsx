@@ -11,7 +11,7 @@ const About = () => {
           style={{
             borderBottom: '2px solid',
             width: 100,
-            margin: '12px auto 0',
+            margin: '12px auto 0'
           }}
         />
 

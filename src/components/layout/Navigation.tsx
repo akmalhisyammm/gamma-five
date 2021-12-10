@@ -20,8 +20,7 @@ const NavItem = ({ href, label, icon }: NavItemProps) => {
         flexBasis="50%"
         fontSize={['2xl', '2xl']}
         padding={0}
-        onClick={() => router.push(href)}
-      >
+        onClick={() => router.push(href)}>
         {icon({ style: { cursor: 'pointer' } })}
       </IconButton>
     </Tooltip>
@@ -32,18 +31,18 @@ const navigations: NavItemProps[] = [
   {
     href: '/',
     label: 'Beranda',
-    icon: FaHome,
+    icon: FaHome
   },
   {
     href: '/contact',
     label: 'Kontak',
-    icon: FaPaperPlane,
+    icon: FaPaperPlane
   },
   {
     href: '/about',
     label: 'Tentang',
-    icon: FaAddressCard,
-  },
+    icon: FaAddressCard
+  }
 ];
 
 const Navigation = () => {

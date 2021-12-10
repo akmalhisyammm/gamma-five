@@ -1,12 +1,5 @@
 import { firebaseApp } from 'config/firebase-config';
-import {
-  getFirestore,
-  collection,
-  getDocs,
-  getDoc,
-  doc,
-  addDoc,
-} from 'firebase/firestore';
+import { getFirestore, collection, getDocs, getDoc, doc, addDoc } from 'firebase/firestore';
 import { Characteristic, Personality, Rule } from 'models';
 
 const db = getFirestore(firebaseApp);
@@ -21,7 +14,7 @@ export const getPersonalities = async () => {
 
   return personalities.docs.map((doc) => ({
     ...(doc.data() as Personality),
-    id: doc.id,
+    id: doc.id
   }));
 };
 
@@ -30,7 +23,7 @@ export const getCharacteristics = async () => {
 
   return characteristics.docs.map((doc) => ({
     ...(doc.data() as Characteristic),
-    id: doc.id,
+    id: doc.id
   }));
 };
 
@@ -39,7 +32,7 @@ export const getRules = async () => {
 
   return rules.docs.map((doc) => ({
     ...(doc.data() as Rule),
-    id: doc.id,
+    id: doc.id
   }));
 };
 
@@ -78,7 +71,7 @@ export const insertContactMessage = async (
       lastName,
       email,
       subject,
-      message,
+      message
     });
   } catch (err) {
     console.error(err);

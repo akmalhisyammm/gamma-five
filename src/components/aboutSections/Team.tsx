@@ -7,37 +7,26 @@ const variants = {
     opacity: 1,
     x: 0,
     y: 0,
-    transition: { type: 'spring', delay: 1 },
+    transition: { type: 'spring', delay: 1 }
   },
   exit: {
     opacity: 0,
     x: -35,
     y: 0,
-    transition: { type: 'spring', delay: 0.5 },
-  },
+    transition: { type: 'spring', delay: 0.5 }
+  }
 };
 
 const Team = () => {
   return (
-    <MotionBox
-      marginY={20}
-      variants={variants}
-      initial="hidden"
-      animate="enter"
-      exit="exit"
-    >
+    <MotionBox marginY={20} variants={variants} initial="hidden" animate="enter" exit="exit">
       <Heading size="md">Tim Pengembang</Heading>
 
       <Grid
         templateColumns={['repeat(1, 1fr)', 'repeat(1, 1fr)', 'repeat(3, 1fr)']}
         gap={4}
-        marginTop={8}
-      >
-        <Flex
-          flexDirection="column"
-          alignItems="center"
-          marginBottom={[4, 4, 0]}
-        >
+        marginTop={8}>
+        <Flex flexDirection="column" alignItems="center" marginBottom={[4, 4, 0]}>
           <Image
             border="4px solid"
             borderRadius="full"
@@ -50,11 +39,7 @@ const Team = () => {
           <Text>00000038816</Text>
         </Flex>
 
-        <Flex
-          flexDirection="column"
-          alignItems="center"
-          marginBottom={[4, 4, 0]}
-        >
+        <Flex flexDirection="column" alignItems="center" marginBottom={[4, 4, 0]}>
           <Image
             border="4px solid"
             borderRadius="full"
@@ -67,11 +52,7 @@ const Team = () => {
           <Text>00000040027</Text>
         </Flex>
 
-        <Flex
-          flexDirection="column"
-          alignItems="center"
-          marginBottom={[4, 4, 0]}
-        >
+        <Flex flexDirection="column" alignItems="center" marginBottom={[4, 4, 0]}>
           <Image
             border="4px solid"
             borderRadius="full"
