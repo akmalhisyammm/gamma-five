@@ -68,17 +68,20 @@ const TestForm = ({ characteristics, inferData }: TestFormProps) => {
                 render={({ field: { onChange, value } }) => (
                   <RadioGroup value={value} onChange={onChange}>
                     <Stack direction={['column', 'column', 'row']} spacing="24px" justify="center">
-                      <Radio colorScheme="red" value="-0.6">
-                        Tidak Cocok
+                      <Radio colorScheme="blue" value="0">
+                        Tidak
                       </Radio>
-                      <Radio colorScheme="yellow" value="-0.2">
-                        Kurang Cocok
+                      <Radio colorScheme="blue" value="0.4">
+                        Mungkin
                       </Radio>
-                      <Radio colorScheme="teal" value="0.6">
-                        Cocok
+                      <Radio colorScheme="blue" value="0.6">
+                        Kemungkinan Besar
                       </Radio>
-                      <Radio colorScheme="green" value="1">
-                        Sangat Cocok
+                      <Radio colorScheme="blue" value="0.8">
+                        Hampir Pasti
+                      </Radio>
+                      <Radio colorScheme="blue" value="1">
+                        Pasti
                       </Radio>
                     </Stack>
                   </RadioGroup>
