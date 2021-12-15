@@ -7,7 +7,7 @@ const variants = {
     opacity: 1,
     x: 0,
     y: 0,
-    transition: { type: 'spring', delay: 0.5 }
+    transition: { type: 'spring', delay: 0.25 }
   },
   exit: {
     opacity: 0,
