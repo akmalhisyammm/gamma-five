@@ -23,7 +23,13 @@ const variants = {
     opacity: 1,
     x: 0,
     y: 0,
-    transition: { type: 'spring', delay: 0.5 }
+    transition: { type: 'spring', delay: 0.25 }
+  },
+  exit: {
+    opacity: 0,
+    x: 0,
+    y: 25,
+    transition: { type: 'spring', delay: 0.25 }
   }
 };
 
@@ -50,7 +56,8 @@ const TestForm = ({ characteristics, inferData }: TestFormProps) => {
             backgroundColor={backgroundColor}
             variants={variants}
             initial="hidden"
-            animate="enter">
+            animate="enter"
+            exit="exit">
             <FormControl
               as="fieldset"
               marginTop={6}
@@ -68,19 +75,19 @@ const TestForm = ({ characteristics, inferData }: TestFormProps) => {
                 render={({ field: { onChange, value } }) => (
                   <RadioGroup value={value} onChange={onChange}>
                     <Stack direction={['column', 'column', 'row']} spacing="24px" justify="center">
-                      <Radio colorScheme="blue" value="0">
+                      <Radio colorScheme="red" value="0">
                         Tidak
                       </Radio>
-                      <Radio colorScheme="blue" value="0.4">
+                      <Radio colorScheme="yellow" value="0.4">
                         Mungkin
                       </Radio>
                       <Radio colorScheme="blue" value="0.6">
                         Kemungkinan Besar
                       </Radio>
-                      <Radio colorScheme="blue" value="0.8">
+                      <Radio colorScheme="teal" value="0.8">
                         Hampir Pasti
                       </Radio>
-                      <Radio colorScheme="blue" value="1">
+                      <Radio colorScheme="green" value="1">
                         Pasti
                       </Radio>
                     </Stack>
