@@ -19,7 +19,7 @@ const variants = {
     opacity: 0,
     x: 0,
     y: 25,
-    transition: { type: 'spring', delay: 1 }
+    transition: { type: 'spring', delay: 0.5 }
   }
 };
 
