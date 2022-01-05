@@ -1,8 +1,8 @@
 {
   "name": "gamma-five",
-  "description": "College Majors Test Expert System Web App",
-  "version": "1.0.1",
   "private": true,
+  "version": "1.0.1",
+  "description": "College majors test expert system web app",
   "author": "Gamma-5 Group",
   "license": "MIT",
   "scripts": {
@@ -12,7 +12,8 @@
     "lint": "next lint",
     "lint:fix": "eslint src --fix && npm run format",
     "format": "prettier --write src",
-    "release": "standard-version"
+    "release": "standard-version",
+    "push-release": "git push --follow-tags origin main"
   },
   "dependencies": {
     "@chakra-ui/react": "^1.6.9",
