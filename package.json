@@ -2,7 +2,7 @@
   "name": "gamma-five",
   "private": true,
   "version": "1.0.1",
-  "description": "College majors test expert system web app",
+  "description": "Web-based expert system for college majors test",
   "author": "Gamma-5 Group",
   "license": "MIT",
   "scripts": {
@@ -12,8 +12,10 @@
     "lint": "next lint",
     "lint:fix": "eslint src --fix && npm run format",
     "format": "prettier --write src",
+    "type-check": "tsc --noEmit",
     "release": "standard-version",
-    "push-release": "git push --follow-tags origin main"
+    "push-release": "git push --follow-tags origin main",
+    "prepare": "husky install"
   },
   "dependencies": {
     "@chakra-ui/react": "^1.6.9",
@@ -30,12 +32,16 @@
     "react-icons": "^4.3.1"
   },
   "devDependencies": {
+    "@commitlint/cli": "^16.0.1",
+    "@commitlint/config-conventional": "^16.0.0",
     "@types/react": "17.0.30",
     "@typescript-eslint/eslint-plugin": "^5.6.0",
     "eslint": "^7.32.0",
     "eslint-config-next": "11.1.2",
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-prettier": "^4.0.0",
+    "husky": "^7.0.4",
+    "lint-staged": "^12.1.5",
     "prettier": "^2.5.1",
     "standard-version": "^9.3.2",
     "typescript": "4.4.4"
