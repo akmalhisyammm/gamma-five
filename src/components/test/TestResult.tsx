@@ -1,5 +1,5 @@
 import { Box, Heading, List, ListIcon, ListItem, Text, useColorModeValue } from '@chakra-ui/react';
-import { Inferred } from 'models';
+import { Inferred } from 'types/inference';
 import { FaCheckCircle } from 'react-icons/fa';
 
 interface TestResultProps {

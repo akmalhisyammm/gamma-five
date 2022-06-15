@@ -19,12 +19,12 @@ export interface UserCertaintyFactor {
 export interface Rule {
   id: string;
   personality_id: string;
-  characteristics: Array<ExpertCertaintyFactor>;
+  characteristics: ExpertCertaintyFactor[];
 }
 
 export interface Input {
   personality_id: string;
-  characteristics: Array<UserCertaintyFactor>;
+  characteristics: UserCertaintyFactor[];
 }
 
 export interface RadioInput {

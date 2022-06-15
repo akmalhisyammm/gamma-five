@@ -31,18 +31,18 @@ const navigations: NavItemProps[] = [
   {
     href: '/',
     label: 'Beranda',
-    icon: FaHome
+    icon: FaHome,
   },
   {
     href: '/contact',
     label: 'Kontak',
-    icon: FaPaperPlane
+    icon: FaPaperPlane,
   },
   {
     href: '/about',
     label: 'Tentang',
-    icon: FaAddressCard
-  }
+    icon: FaAddressCard,
+  },
 ];
 
 const Navigation = () => {

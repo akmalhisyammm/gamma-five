@@ -1,5 +1,5 @@
 import { Box, Heading } from '@chakra-ui/react';
-import { Info, Team } from 'components/aboutSections';
+import { Info, Team } from 'components/about';
 import Layout from 'components/layout';
 
 const About = () => {
@@ -11,7 +11,7 @@ const About = () => {
           style={{
             borderBottom: '2px solid',
             width: 100,
-            margin: '12px auto 0'
+            margin: '12px auto 0',
           }}
         />
 
