@@ -1,12 +1,11 @@
 import { ChakraProvider } from '@chakra-ui/react';
 import type { AppProps } from 'next/app';
 import Head from 'next/head';
-import { AnimatePresence } from 'framer-motion';
 
 import '@fontsource/lexend';
 import customTheme from 'styles/customTheme';
 
-function MyApp({ Component, pageProps, router }: AppProps) {
+function MyApp({ Component, pageProps }: AppProps) {
   return (
     <ChakraProvider theme={customTheme}>
       <Head>
@@ -16,9 +15,7 @@ function MyApp({ Component, pageProps, router }: AppProps) {
         />
       </Head>
 
-      <AnimatePresence exitBeforeEnter onExitComplete={() => window.scrollTo(0, 0)}>
-        <Component {...pageProps} key={router.route} />
-      </AnimatePresence>
+      <Component {...pageProps} />
     </ChakraProvider>
   );
 }
