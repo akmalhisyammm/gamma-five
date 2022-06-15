@@ -11,7 +11,7 @@ const Footer = () => {
       marginTop={8}
       marginBottom={['28', '28', '8']}>
       <Text>
-        2021 &bull;{' '}
+        2022 &bull;{' '}
         <Link href="/about" passHref>
           <ChakraLink>Gamma-5</ChakraLink>
         </Link>
