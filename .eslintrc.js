@@ -23,6 +23,7 @@ module.exports = {
   rules: {
     'react/react-in-jsx-scope': 'off',
     '@typescript-eslint/no-explicit-any': 'off',
+    '@next/next/no-document-import-in-page': 'off',
   },
   settings: {
     react: {

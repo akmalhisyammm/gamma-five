@@ -3,5 +3,5 @@ export interface Personality {
   personality_id: string;
   name: string;
   description: string;
-  majors: Array<string>;
+  majors: string[];
 }

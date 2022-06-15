@@ -1,4 +1,4 @@
-import { Input, Rule } from 'models';
+import { Input, Rule } from 'types/inference';
 
 export const certaintyFactor = (input: Input, rule: Rule) => {
   const certainties = [];

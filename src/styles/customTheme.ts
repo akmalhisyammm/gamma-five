@@ -4,8 +4,8 @@ const customTheme = extendTheme({
   fonts: {
     ...theme.fonts,
     heading: 'Lexend, serif',
-    body: 'Lexend, sans-serif'
-  }
+    body: 'Lexend, sans-serif',
+  },
 });
 
 export default customTheme;

@@ -6,7 +6,7 @@ import {
   Link as ChakraLink,
   Spacer,
   Text,
-  useColorMode
+  useColorMode,
 } from '@chakra-ui/react';
 import Link from 'next/link';
 
