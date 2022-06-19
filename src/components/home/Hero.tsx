@@ -44,7 +44,7 @@ const Hero = () => {
           </Button>
         </Box>
 
-        <Image src="/assets/illustrations/robot.png" alt="Robot" width={400} />
+        <Image src="/illustrations/robot.png" alt="Robot Illustration" width={400} />
       </HStack>
     </motion.div>
   );
