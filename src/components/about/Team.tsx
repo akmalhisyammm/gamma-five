@@ -20,8 +20,8 @@ const Team = () => {
               borderRadius="full"
               boxSize="200px"
               marginBottom={4}
-              src="assets/images/fajri.jpg"
-              alt="fajri"
+              src="/images/fajri.jpg"
+              alt="Fajri Image"
             />
             <p>Muhamad Fajri Tirta Nugraha</p>
             <p>00000038816</p>
@@ -33,8 +33,8 @@ const Team = () => {
               borderRadius="full"
               boxSize="200px"
               marginBottom={4}
-              src="assets/images/akmal.jpg"
-              alt="akmal"
+              src="/images/akmal.jpg"
+              alt="Akmal Image"
             />
             <p>Muhammad Akmal Hisyam</p>
             <p>00000040027</p>
@@ -46,8 +46,8 @@ const Team = () => {
               borderRadius="full"
               boxSize="200px"
               marginBottom={4}
-              src="assets/images/pandu.jpg"
-              alt="pandu"
+              src="/images/pandu.jpg"
+              alt="Pandu Image"
             />
             <p>Pandu Wijaya</p>
             <p>00000039905</p>

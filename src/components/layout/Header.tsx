@@ -29,7 +29,7 @@ const Header = () => {
           <Link href="/" passHref scroll={false}>
             <ChakraLink>
               <Flex alignItems="center">
-                <Image width={[12, 16]} src="/assets/logo.png" alt="logo" />
+                <Image width={[12, 16]} src="/logo.png" alt="logo" />
                 <Box marginLeft={4}>
                   <Heading as="h1" fontSize={['1rem', '1.5rem']} fontWeight="600" mb={1}>
                     Gamma-5
