@@ -1,4 +1,4 @@
-import { Image } from '@chakra-ui/react';
+import { Img } from '@chakra-ui/react';
 import { motion } from 'framer-motion';
 
 const Info = () => {
@@ -7,7 +7,7 @@ const Info = () => {
       initial={{ y: 50, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ ease: 'easeOut' }}>
-      <Image src="/illustrations/teamwork.png" alt="Teamwork Illustration" marginX="auto" />
+      <Img src="/illustrations/teamwork.png" alt="Teamwork Illustration" marginX="auto" />
 
       <p>
         Web Sistem Pakar Gamma-5 merupakan web untuk menentukan jurusan kuliah berdasarkan

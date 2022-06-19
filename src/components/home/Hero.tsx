@@ -1,4 +1,4 @@
-import { Box, Button, Heading, HStack, Image, Text } from '@chakra-ui/react';
+import { Box, Button, Heading, HStack, Img, Text } from '@chakra-ui/react';
 import { useRouter } from 'next/router';
 import { motion } from 'framer-motion';
 import { FaArrowRight } from 'react-icons/fa';
@@ -44,7 +44,7 @@ const Hero = () => {
           </Button>
         </Box>
 
-        <Image src="/illustrations/robot.png" alt="Robot Illustration" width={400} />
+        <Img src="/illustrations/robot.png" alt="Robot Illustration" width={400} />
       </HStack>
     </motion.div>
   );

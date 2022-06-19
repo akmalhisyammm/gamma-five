@@ -1,4 +1,4 @@
-import { Box, Flex, Grid, Heading, Image } from '@chakra-ui/react';
+import { Box, Flex, Grid, Heading, Img } from '@chakra-ui/react';
 import { motion } from 'framer-motion';
 
 const Team = () => {
@@ -15,7 +15,7 @@ const Team = () => {
           gap={4}
           marginTop={8}>
           <Flex flexDirection="column" alignItems="center" marginBottom={[4, 4, 0]}>
-            <Image
+            <Img
               border="4px solid"
               borderRadius="full"
               boxSize="200px"
@@ -28,7 +28,7 @@ const Team = () => {
           </Flex>
 
           <Flex flexDirection="column" alignItems="center" marginBottom={[4, 4, 0]}>
-            <Image
+            <Img
               border="4px solid"
               borderRadius="full"
               boxSize="200px"
@@ -41,7 +41,7 @@ const Team = () => {
           </Flex>
 
           <Flex flexDirection="column" alignItems="center" marginBottom={[4, 4, 0]}>
-            <Image
+            <Img
               border="4px solid"
               borderRadius="full"
               boxSize="200px"
