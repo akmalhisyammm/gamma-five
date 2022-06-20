@@ -8,7 +8,9 @@ const Team = () => {
         initial={{ y: 50, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ ease: 'easeOut', delay: 0.2 }}>
-        <Heading size="md">Tim Pengembang</Heading>
+        <Heading size="md" textAlign="center">
+          Tim Pengembang
+        </Heading>
 
         <Grid
           templateColumns={['repeat(1, 1fr)', 'repeat(1, 1fr)', 'repeat(3, 1fr)']}

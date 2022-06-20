@@ -12,6 +12,7 @@ import {
 } from '@chakra-ui/react';
 import { useState } from 'react';
 import type { GetStaticProps } from 'next';
+import { NextSeo } from 'next-seo';
 import { useRouter } from 'next/router';
 import { FaArrowLeft } from 'react-icons/fa';
 import { collection, getDocs, getFirestore } from 'firebase/firestore';
@@ -20,6 +21,7 @@ import { Characteristic } from 'types/characteristic';
 import { Personality } from 'types/personality';
 import { Inferred, RadioInput, Rule } from 'types/inference';
 import { infer } from 'utils/infer';
+import { baseUrl } from 'constants/baseUrl';
 import { TestForm, TestResult } from 'components/test';
 import Layout from 'components/layout';
 
@@ -45,7 +47,16 @@ const Test = ({ personalities, characteristics, rules }: TestProps) => {
   };
 
   return (
-    <Layout title="Tes Penjurusan">
+    <Layout>
+      <NextSeo
+        title="Test"
+        canonical={`${baseUrl}/test`}
+        openGraph={{
+          title: 'Test | Gamma-5',
+          description: 'Test page of Gamma-5',
+        }}
+      />
+
       <Heading textAlign="center">Tes Penjurusan</Heading>
       <hr
         style={{
@@ -54,7 +65,6 @@ const Test = ({ personalities, characteristics, rules }: TestProps) => {
           margin: '12px auto 0',
         }}
       />
-
       <TestForm characteristics={characteristics} inferData={handleInferData} />
 
       {result && (

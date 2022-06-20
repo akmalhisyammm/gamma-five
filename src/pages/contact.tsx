@@ -1,7 +1,9 @@
 import { Heading } from '@chakra-ui/react';
+import { NextSeo } from 'next-seo';
 import { addDoc, collection, getFirestore } from 'firebase/firestore';
 import { firebaseApp } from 'lib/firebase';
 import { ContactMessage } from 'types/contact';
+import { baseUrl } from 'constants/baseUrl';
 import { ContactForm } from 'components/contact';
 import Layout from 'components/layout';
 
@@ -14,7 +16,16 @@ const Contact = () => {
   };
 
   return (
-    <Layout title="Kontak">
+    <Layout>
+      <NextSeo
+        title="Contact"
+        canonical={`${baseUrl}/contact`}
+        openGraph={{
+          title: 'Contact | Gamma-5',
+          description: 'Contact page of Gamma-5',
+        }}
+      />
+
       <Heading textAlign="center">Kontak Kami</Heading>
       <hr
         style={{
@@ -23,7 +34,6 @@ const Contact = () => {
           margin: '12px auto 0',
         }}
       />
-
       <ContactForm sendMessage={handleSendMessage} />
     </Layout>
   );

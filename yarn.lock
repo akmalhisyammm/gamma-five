@@ -1625,6 +1625,11 @@
   dependencies:
     chalk "^4.1.0"
 
+"@corex/deepmerge@^4.0.26":
+  version "4.0.26"
+  resolved "https://registry.yarnpkg.com/@corex/deepmerge/-/deepmerge-4.0.26.tgz#5ebd60608e5050a336f3163e68ac58152963a3aa"
+  integrity sha512-Tp0u2/h45uWbZhsjazK9W6WwwTVBqCIY+1qJHfy6QWN0qUw6vCWLnJhB+Gg9dpQZ26q3ygd6aj49DtXUDq56JQ==
+
 "@cspotcode/source-map-support@^0.8.0":
   version "0.8.1"
   resolved "https://registry.yarnpkg.com/@cspotcode/source-map-support/-/source-map-support-0.8.1.tgz#00629c35a688e05a88b1cda684fb9d5e73f000a1"
@@ -5146,6 +5151,19 @@ next-pwa@^5.5.4:
     terser-webpack-plugin "^5.3.3"
     workbox-webpack-plugin "^6.5.3"
     workbox-window "^6.5.3"
+
+next-seo@^5.4.0:
+  version "5.4.0"
+  resolved "https://registry.yarnpkg.com/next-seo/-/next-seo-5.4.0.tgz#37a7784b30b3f70cec3fa0d77f9dde5990822d24"
+  integrity sha512-R9DhajPwJnR/lsF2hZ8cN8uqr5CVITsRrCG1AF5+ufcaybKYOvnH8sH9MaH4/hpkps3PQ9H71S7J7SPYixAYzQ==
+
+next-sitemap@^3.1.2:
+  version "3.1.2"
+  resolved "https://registry.yarnpkg.com/next-sitemap/-/next-sitemap-3.1.2.tgz#f4a658c0467263e5f090298b40c265564e27812b"
+  integrity sha512-/afg9XETPQkDJ4/YE+7JyHx70q8Zclo00abWuFKDC/vz91laj9F+YDSI5p/M268vo1Z7zcVOY725xAIqfbFc3Q==
+  dependencies:
+    "@corex/deepmerge" "^4.0.26"
+    minimist "^1.2.6"
 
 next@^12.1.6:
   version "12.1.6"
