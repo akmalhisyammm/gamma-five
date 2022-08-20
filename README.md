@@ -1,34 +1,36 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Gamma-5
 
-## Getting Started
+Gamma-5 is a web-based expert system to assist prospective students in determining college majors based on their personality using Certainty Factor method.
 
-First, run the development server:
+## Screenshots
 
-```bash
-npm run dev
-# or
-yarn dev
-```
+![Screenshot](https://github.com/akmalhisyammm/akmalhisyam.my.id/blob/main/public/projects/previews/gamma-5_preview.png)
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Authors
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+**Gamma-5 Group**
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+- [Muhammad Akmal Hisyam](https://www.github.com/akmalhisyammm)
+- [Muhamad Fajri Tirta Nugraha](https://github.com/Fajri10-umn)
+- [Pandu Wijaya](https://github.com/panduwijaya03)
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+## Abstract
 
-## Learn More
+Everyone often must face several problems, for example, the problems that are often experienced by prospective students are in determining the appropriate college major for themselves. The level of success or failure of a person in life, be it the world of work, academics, or in the community is much influenced by the behavior and personality of that person. Therefore, prospective students are recommended to determine the right college major from the beginning of entering the lecture level. Based on the problems above, we need a web-based expert system that can assist prospective students in determining college majors that suit their personality. The purpose of developing this expert system is to build an expert system that can determine college majors based on the personality of prospective students, create a system that can replace the role of experts in recognizing the personality of prospective students, and apply the certainty factor method to an expert system to determine college majors based on the personality of prospective students. This website was developed using the Next.js framework with Chakra UI as the User Interface and Firebase as the database. Based on the results of the research that has been done, the development of a web-based expert system to determine college majors based on the personality of prospective students using the functional certainty factor method has worked well, where the system is able to provide recommendations for college majors that are in accordance with the personality based on tests that have been carried out by user.
 
-To learn more about Next.js, take a look at the following resources:
+**Keywords:** certainty factor, college majors, expert system, personality, website
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Tech Stack
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+- TypeScript
+- Next.js
+- Chakra UI
+- Firebase
 
-## Deploy on Vercel
+## Credits
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+[Freepik](https://www.freepik.com/)
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+## License
+
+[MIT](./LICENSE)
