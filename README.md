@@ -1,10 +1,10 @@
 # Gamma-5
 
-Gamma-5 is a web-based expert system to assist prospective students in determining college majors based on their personality using Certainty Factor method.
+Gamma-5 is a web-based expert system to assist prospective students in determining college majors based on their personality using Certainty Factor method. Built using Next.js, Chakra UI, and Firebase.
 
 ## Screenshots
 
-![Screenshot](https://github.com/akmalhisyammm/akmalhisyam.my.id/blob/main/public/projects/previews/gamma-5_preview.png)
+![Screenshot](https://akmalhisyam.s3.ap-southeast-1.amazonaws.com/projects/previews/gamma-5_preview.png)
 
 ## Authors
 
